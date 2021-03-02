@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: Staging
-      url: Staging
     needs: build
 
     steps:
@@ -36,7 +35,6 @@ jobs:
     needs: deploy_staging
     environment: 
       name: Production
-      url: Production
 
     steps:
       - uses: actions/checkout@v2
