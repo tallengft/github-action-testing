@@ -9,7 +9,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
@@ -22,7 +21,6 @@ jobs:
     environment: 
       name: Staging
     needs: build
-
     steps:
       - uses: actions/checkout@v2
 
@@ -35,7 +33,6 @@ jobs:
     needs: deploy_staging
     environment: 
       name: Production
-
     steps:
       - uses: actions/checkout@v2
 
