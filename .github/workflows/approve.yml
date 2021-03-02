@@ -1,6 +1,8 @@
 name: approve
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
