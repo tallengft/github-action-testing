@@ -32,3 +32,15 @@ This will require one of the users to manually approve the workflow before it ca
 ![approve-approval](./docs/approve-approval.png)
 
 ---
+
+# Permissions for workflow_dispatch
+It is possible to disable workflow jobs with an IF statement on each job, such as
+
+```yml
+jobs:
+  PR-Comment:
+    if: github.actor != 'kingthorin' && github.actor != 'wstgbot' && github.actor != 'ThunderSon' && github.actor != 'rejahrehim' && github.actor != 'victoriadrake'  
+    runs-on: ubuntu-latest
+    steps:
+    - name: PR Comment
+```
