@@ -21,7 +21,7 @@ jobs:
           echo "::set-output name=mix-test::$(mix test)\n"
       
       - name: Show Tests
-        run: echo "test ${{ steps.run_tests.outputs.SELECTED_COLOR }}"
+        run: echo "test ${{ steps.run_tests.outputs }}"
 
 
   deploy_staging:
