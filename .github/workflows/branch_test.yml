@@ -11,8 +11,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello this is a simple script
+      - name: Run tests
+        id: run_tests
+        run: |
+          echo "::set-output name=mix-compile--warnings-as-errors::$(mix compile --warnings-as-errors)\n"
+          echo "::set-output name=mix-format--check-formatted::$(mix format --check-formatted)\n"
+          echo "::set-output name=mix-ecto_create::$(mix ecto.create)\n"
+          echo "::set-output name=mix-ecto_migrate::$(mix ecto.migrate)\n"
+          echo "::set-output name=mix-test::$(mix test)\n"
+      
+      - name: Show Tests
+        run: echo "test ${{ steps.run_tests.outputs.SELECTED_COLOR }}"
+
 
   deploy_staging:
     name: Deploy Staging
