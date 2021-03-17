@@ -60,6 +60,8 @@ jobs:
             minor_pattern: "(MINOR)"
             # A string to determine the format of the version output
             format: "${major}.${minor}.${patch}"
+        - name: test
+          run: echo ${{ steps.get_version.outputs.changed }}
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
