@@ -42,7 +42,7 @@ jobs:
         run: echo Deploy to Production
   
   create_release:
-      name: Deploy Production
+      name: Create Release
       runs-on: ubuntu-latest
       needs: build
       steps:
