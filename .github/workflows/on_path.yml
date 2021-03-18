@@ -1,4 +1,4 @@
-name: approve
+name: Path Change
 
 on:
   push:
