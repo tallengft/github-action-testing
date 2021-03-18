@@ -58,7 +58,6 @@ If there is no file changes and the workflow is run manualy then the Semantic Ve
 ---
 
 # Only run on paths
-
 **Example including paths**
 
 If at least one path matches a pattern in the `paths` filter, the workflow runs. To trigger a build anytime you push a JavaScript file, you can use a wildcard pattern.
