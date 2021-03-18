@@ -54,3 +54,28 @@ This job produces a semantic version for a repository using the repository's git
 This action is designed to facilitate assigning version numbers during a build automatically while publishing version that only increment by one value per release. To accomplish this, the next version number is calculated along with a commit increment indicating the number of commits for this version. The commit messages are inspected to determine the type of version change the next version represents. Including the term (MAJOR) or (MINOR) in the commit message alters the type of change the next version will represent.
 
 If there is no file changes and the workflow is run manualy then the Semantic Version action will not produce a new version, to work around this the Create Release steps have an additional `continue-on-error: true` added. 
+
+---
+
+# Only run on paths
+
+**Example including paths**
+
+If at least one path matches a pattern in the `paths` filter, the workflow runs. To trigger a build anytime you push a JavaScript file, you can use a wildcard pattern.
+
+```yml
+on:
+  push:
+    paths:
+    - '**.js'
+```
+
+``yml
+on:
+  push:
+    paths:
+      - docs/*
+
+```
+
+---
